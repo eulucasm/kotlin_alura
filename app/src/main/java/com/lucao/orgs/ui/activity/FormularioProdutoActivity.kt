@@ -13,6 +13,7 @@ class FormularioProdutoActivity : AppCompatActivity() {
 
    override fun onCreate(savedInstanceState: Bundle?) {
       super.onCreate(savedInstanceState)
+      binding = ActivityFormularioProdutoBinding.inflate(layoutInflater, null, false)
       setContentView(binding.root)
 
       binding.botaoSalvar.setOnClickListener {

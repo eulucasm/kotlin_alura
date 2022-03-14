@@ -1,5 +1,6 @@
 package com.lucao.orgs.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,6 +15,7 @@ class MainActivity : AppCompatActivity() {
 
    override fun onCreate(savedInstanceState: Bundle?) {
       super.onCreate(savedInstanceState)
+
       binding = ActivityMainBinding.inflate(layoutInflater, null, false)
 
       setContentView(binding.root)
@@ -30,7 +32,11 @@ class MainActivity : AppCompatActivity() {
             nome = "teste5", descricao = "teste desc5", valor = BigDecimal("204.99")
          )
       ))
-      binding.recyclerView.layoutManager = LinearLayoutManager(this)
+
+      binding.floatingActionButton.setOnClickListener{
+         val intent = Intent(this, FormularioProdutoActivity::class.java)
+         startActivity(intent)
+      }
    }
 
 
