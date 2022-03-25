@@ -5,7 +5,7 @@
       <map>
         <entry key="app/src/main/res/drawable/plano_de_fundo_produto.xml" value="0.1965" />
         <entry key="app/src/main/res/font/montserrat_bold.xml" value="0.2703125" />
-        <entry key="app/src/main/res/layout/produto_item.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/produto_item.xml" value="0.33" />
       </map>
     </option>
   </component>
