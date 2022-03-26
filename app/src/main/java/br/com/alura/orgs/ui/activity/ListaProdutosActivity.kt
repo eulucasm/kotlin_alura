@@ -12,40 +12,39 @@ import br.com.alura.orgs.ui.recyclerview.adapter.ListaProdutosAdapter
 
 class ListaProdutosActivity : AppCompatActivity() {
 
-   private val dao = ProdutosDao()
-   private val adapter = ListaProdutosAdapter(context = this, produtos = dao.buscaTodos())
-   private val binding by lazy {
-      ActivityListaProdutosActivityBinding.inflate(layoutInflater)
-   }
+    private val dao = ProdutosDao()
+    private val adapter = ListaProdutosAdapter(context = this, produtos = dao.buscaTodos())
+    private val binding by lazy {
+        ActivityListaProdutosActivityBinding.inflate(layoutInflater)
+    }
 
-   override fun onCreate(savedInstanceState: Bundle?) {
-      super.onCreate(savedInstanceState)
-      setContentView(binding.root)
-      configuraRecyclerView()
-      configuraFab()
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(binding.root)
+        configuraRecyclerView()
+        configuraFab()
+    }
 
-   }
+    override fun onResume() {
+        super.onResume()
+        adapter.atualiza(dao.buscaTodos())
+    }
 
-   override fun onResume() {
-      super.onResume()
-      adapter.atualiza(dao.buscaTodos())
-   }
+    private fun configuraFab() {
+        val fab = binding.activityListaProdutosFab
+        fab.setOnClickListener {
+            vaiParaFormularioProduto()
+        }
+    }
 
-   private fun configuraFab() {
-      val fab = binding.activityListaProdutosFab
-      fab.setOnClickListener {
-         vaiParaFormularioProduto()
-      }
-   }
+     private fun vaiParaFormularioProduto() {
+        val intent = Intent(this, FormularioProdutoActivity::class.java)
+        startActivity(intent)
+    }
 
-   private fun vaiParaFormularioProduto() {
-      val intent = Intent(this, FormularioProdutoActivity::class.java)
-      startActivity(intent)
-   }
-
-   private fun configuraRecyclerView() {
-      val recyclerView = binding.activityListaProdutosRecyclerView
-      recyclerView.adapter = adapter
-   }
+    private fun configuraRecyclerView() {
+        val recyclerView = binding.activityListaProdutosRecyclerView
+        recyclerView.adapter = adapter
+    }
 
 }

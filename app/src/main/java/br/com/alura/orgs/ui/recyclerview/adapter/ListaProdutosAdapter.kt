@@ -27,11 +27,13 @@ class ListaProdutosAdapter(
             val descricao = binding.produtoItemDescricao
             descricao.text = produto.descricao
             val valor = binding.produtoItemValor
-            val valorEmMoeda: String = formataParaMoedaBR(produto.valor)
+            val valorEmMoeda: String =
+                formataParaMoedaBrasileira(produto.valor)
             valor.text = valorEmMoeda
+            binding.imageView.load(produto.imagem)
         }
 
-        private fun formataParaMoedaBR(valor: BigDecimal): String {
+        private fun formataParaMoedaBrasileira(valor: BigDecimal): String {
             val formatador: NumberFormat = NumberFormat
                 .getCurrencyInstance(Locale("pt", "br"))
             return formatador.format(valor)

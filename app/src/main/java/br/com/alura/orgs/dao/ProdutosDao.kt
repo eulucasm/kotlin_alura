@@ -5,20 +5,22 @@ import java.math.BigDecimal
 
 class ProdutosDao {
 
-   fun adiciona(produto: Produto) {
-      produtos.add(produto)
-   }
+    fun adiciona(produto: Produto) {
+        produtos.add(produto)
+    }
 
-   fun buscaTodos(): List<Produto> {
-      return produtos.toList()
-   }
+    fun buscaTodos(): List<Produto> {
+        return produtos.toList()
+    }
 
-   companion object {
-      private val produtos = mutableListOf<Produto>(
-         Produto(nome = "cesta de frutas",
-            descricao = "frutas variadas",
-            valor = BigDecimal("19.90"))
-      )
-   }
+    companion object {
+        private val produtos = mutableListOf<Produto>(
+            Produto(
+                nome = "Salada de frutas",
+                descricao = "Laranja, maçãs e uva",
+                valor = BigDecimal("19.83")
+            )
+        )
+    }
 
 }
