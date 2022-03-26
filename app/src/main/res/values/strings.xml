@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Orgs</string>
+    <string name="Nome">Nome</string>
+    <string name="salvar">Salvar</string>
+    <string name="valor">Valor</string>
+    <string name="descri_o">Descrição</string>
+    <string name="carregar">Carregar</string>
+    <string name="url_da_imagem">URL da imagem</string>
 </resources>
